@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { CheckCircle2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const PageHero = ({ title, subtitle, image }: { title: string, subtitle: string, image: string }) => (
   <section className="relative h-[40vh] flex items-center overflow-hidden">
@@ -123,9 +124,9 @@ export const Gutters = () => (
           <h3 className="text-3xl font-serif font-bold mb-4">Don't wait for the next storm!</h3>
           <p className="text-gray-400 text-lg">Schedule a free inspection today and ensure your home is protected.</p>
         </div>
-        <button className="bg-ce-yellow text-ce-black px-10 py-4 rounded-full font-bold text-lg hover:bg-yellow-500 transition-all shrink-0">
+        <Link to="/contact" className="bg-ce-yellow text-ce-black px-10 py-4 rounded-full font-bold text-lg text-center hover:bg-yellow-500 transition-all shrink-0 inline-block">
           Get Free Inspection
-        </button>
+        </Link>
       </div>
     </section>
   </div>
