@@ -1,0 +1,22 @@
+<svg width="660" height="300" viewBox="0 0 660 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Oversized Oval Background with Red Border -->
+  <ellipse cx="360" cy="150" rx="290" ry="140" fill="#FFF200" stroke="#A3262A" stroke-width="12" />
+  
+  <!-- Centered Content Group -->
+  <g transform="translate(110, 45)">
+    <!-- Roof and Gutter Icon -->
+    <path d="M40 80 L120 30 L200 80" stroke="#1A1A1A" stroke-width="10" fill="none" stroke-linejoin="round" />
+    <path d="M60 90 L60 130 L90 160 L90 200" stroke="#1A1A1A" stroke-width="10" fill="none" stroke-linejoin="round" />
+    <rect x="50" y="85" width="90" height="25" fill="#1A1A1A" transform="rotate(-5 50 85)" />
+    
+    <!-- Text Content -->
+    <text x="210" y="65" font-family="Arial Black, sans-serif" font-weight="900" font-size="65" fill="#A3262A">C&amp;E</text>
+    <text x="165" y="115" font-family="Arial Black, sans-serif" font-weight="900" font-size="38" fill="#A3262A">SEAMLESS</text>
+    <text x="195" y="160" font-family="Arial Black, sans-serif" font-weight="900" font-size="38" fill="#A3262A">GUTTERS</text>
+    <text x="65" y="210" font-family="Arial Black, sans-serif" font-weight="900" font-size="48" fill="#A3262A">337.384.4417</text>
+    
+    <!-- Bottom Lines -->
+    <line x1="60" y1="228" x2="320" y2="228" stroke="#1A1A1A" stroke-width="3" />
+    <line x1="60" y1="236" x2="320" y2="236" stroke="#1A1A1A" stroke-width="3" />
+  </g>
+</svg>
