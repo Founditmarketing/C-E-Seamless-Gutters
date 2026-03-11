@@ -10,7 +10,7 @@ export const Navbar = () => {
             <img 
               src="/logo.svg" 
               alt="C&E Seamless Gutters" 
-              className="h-24 w-auto object-contain"
+              className="h-16 md:h-24 w-auto object-contain"
               referrerPolicy="no-referrer"
             />
           </Link>
