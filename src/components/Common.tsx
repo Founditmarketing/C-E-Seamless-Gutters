@@ -13,7 +13,7 @@ export const Navbar = () => {
             <img 
               src="/logo.png" 
               alt="C&E Seamless Gutters" 
-              className="h-16 md:h-20 w-auto object-contain transition-transform duration-700 group-hover:scale-105 filter brightness-0 invert opacity-90"
+              className="h-16 md:h-20 w-auto object-contain transition-transform duration-700 group-hover:scale-105 filter invert mix-blend-screen opacity-90"
               referrerPolicy="no-referrer"
             />
           </Link>
@@ -93,7 +93,7 @@ export const Footer = () => {
               <img 
                 src="/logo.png" 
                 alt="C&E Seamless Gutters" 
-                className="h-20 w-auto object-contain mb-8 filter brightness-0 invert opacity-90"
+                className="h-20 w-auto object-contain mb-8 filter invert mix-blend-screen opacity-90"
                 referrerPolicy="no-referrer"
               />
               <p className="text-gray-400 font-light text-xl max-w-md leading-relaxed">
