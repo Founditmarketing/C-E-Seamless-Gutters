@@ -6,7 +6,7 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 bg-ce-black text-white shadow-lg">
+    <nav className="sticky top-0 z-50 bg-ce-black/85 backdrop-blur-xl border-b border-white/10 text-white shadow-xl transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
           <Link to="/" className="flex items-center">
@@ -53,8 +53,8 @@ export const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-ce-black border-t border-white/10 absolute w-full left-0 z-50">
-          <div className="px-4 pt-4 pb-6 space-y-4 flex flex-col shadow-2xl">
+        <div className="md:hidden glass-dark absolute w-full left-0 z-50">
+          <div className="px-4 pt-4 pb-6 space-y-4 flex flex-col">
             <Link to="/" onClick={() => setIsOpen(false)} className="block hover:text-ce-yellow transition-colors text-lg font-medium">Home</Link>
             <Link to="/about" onClick={() => setIsOpen(false)} className="block hover:text-ce-yellow transition-colors text-lg font-medium">About Us</Link>
             <div className="space-y-2 pt-2 pb-2">
@@ -80,8 +80,9 @@ export const Navbar = () => {
 
 export const Footer = () => {
   return (
-    <footer className="bg-ce-black text-white pt-16 pb-8 bg-stone">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="bg-ce-black text-white pt-24 pb-12 border-t border-white/10 relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-ce-red/10 via-transparent to-transparent pointer-events-none"></div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div>
             <div className="flex items-center mb-6">
@@ -146,45 +147,54 @@ export const Footer = () => {
 
 export const QuoteForm = () => {
   return (
-    <section className="py-20 bg-brick bg-gray-100">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
-          <div className="bg-ce-red p-12 text-white md:w-1/3 flex flex-col justify-center">
-            <h2 className="text-3xl font-serif font-bold mb-6">Get a Free Quote</h2>
-            <p className="text-red-100 mb-8">
-              Ready to start your next project? Fill out the form and we'll get back to you within 24 hours.
-            </p>
-            <div className="space-y-4">
-              <div className="flex items-start space-x-3">
-                <MapPin size={20} className="text-ce-yellow shrink-0" />
-                <span>709 Division St, Lake Charles, LA 70601</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Phone size={20} className="text-ce-yellow" />
-                <span>(337) 384-4417</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Mail size={20} className="text-ce-yellow" />
-                <span>cehomeser@gmail.com</span>
+    <section id="quote-form" className="py-32 bg-mesh-light relative overflow-hidden">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="bg-white rounded-[2.5rem] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] overflow-hidden flex flex-col md:flex-row border border-gray-100">
+          <div className="bg-ce-black p-12 md:p-16 text-white md:w-2/5 flex flex-col justify-center relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-ce-red/20 to-transparent pointer-events-none"></div>
+            <div className="relative z-10">
+              <h2 className="text-4xl font-serif font-bold mb-6">Get a Free Quote</h2>
+              <p className="text-gray-300 mb-12 text-lg leading-relaxed">
+                Ready to elevate your home? Fill out the form below and our experts will reach out to you within 24 hours.
+              </p>
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <div className="bg-white/10 p-3 rounded-full shrink-0">
+                    <MapPin size={24} className="text-ce-yellow" />
+                  </div>
+                  <span className="text-lg pt-1">709 Division St<br/>Lake Charles, LA 70601</span>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <div className="bg-white/10 p-3 rounded-full shrink-0">
+                    <Phone size={24} className="text-ce-yellow" />
+                  </div>
+                  <span className="text-lg">(337) 384-4417</span>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <div className="bg-white/10 p-3 rounded-full shrink-0">
+                    <Mail size={24} className="text-ce-yellow" />
+                  </div>
+                  <span className="text-lg">cehomeser@gmail.com</span>
+                </div>
               </div>
             </div>
           </div>
           
-          <div className="p-12 md:w-2/3">
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="p-12 md:p-16 md:w-3/5 bg-white">
+            <form className="space-y-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-                  <input type="text" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-ce-red focus:border-transparent outline-none transition-all" placeholder="John Doe" />
+                  <label className="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wider">Full Name</label>
+                  <input type="text" className="w-full px-5 py-4 bg-gray-50 rounded-2xl border-0 focus:ring-2 focus:ring-ce-red focus:bg-white outline-none transition-all" placeholder="John Doe" />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-                  <input type="email" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-ce-red focus:border-transparent outline-none transition-all" placeholder="john@example.com" />
+                  <label className="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wider">Email Address</label>
+                  <input type="email" className="w-full px-5 py-4 bg-gray-50 rounded-2xl border-0 focus:ring-2 focus:ring-ce-red focus:bg-white outline-none transition-all" placeholder="john@example.com" />
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Service Needed</label>
-                <select className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-ce-red focus:border-transparent outline-none transition-all">
+                <label className="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wider">Service Needed</label>
+                <select className="w-full px-5 py-4 bg-gray-50 rounded-2xl border-0 focus:ring-2 focus:ring-ce-red focus:bg-white outline-none transition-all appearance-none cursor-pointer">
                   <option>Gutter Services</option>
                   <option>Home Improvement</option>
                   <option>Window Installation</option>
@@ -192,10 +202,10 @@ export const QuoteForm = () => {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                <textarea rows={4} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-ce-red focus:border-transparent outline-none transition-all" placeholder="Tell us about your project..."></textarea>
+                <label className="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wider">Message</label>
+                <textarea rows={4} className="w-full px-5 py-4 bg-gray-50 rounded-2xl border-0 focus:ring-2 focus:ring-ce-red focus:bg-white outline-none transition-all resize-none" placeholder="Tell us about your project..."></textarea>
               </div>
-              <button type="submit" className="w-full bg-ce-yellow hover:bg-yellow-500 text-ce-black font-bold py-4 rounded-xl shadow-lg transform hover:-translate-y-1 transition-all">
+              <button type="submit" className="w-full bg-ce-red hover:bg-red-700 text-white font-bold py-5 rounded-2xl shadow-xl shadow-ce-red/20 transform hover:-translate-y-1 transition-all text-lg tracking-wide">
                 Send Request
               </button>
             </form>
