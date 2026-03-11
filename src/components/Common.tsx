@@ -1,7 +1,10 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Facebook, Instagram } from 'lucide-react';
+import { Phone, Mail, MapPin, Facebook, Instagram, Menu, X } from 'lucide-react';
 
 export const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <nav className="sticky top-0 z-50 bg-ce-black text-white shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -31,11 +34,46 @@ export const Navbar = () => {
             <Link to="/contact" className="hover:text-ce-yellow transition-colors">Contact</Link>
           </div>
           
-          <Link to="/contact" className="bg-ce-red hover:bg-red-700 text-white px-6 py-2 rounded-full font-bold transition-all transform hover:scale-105 shadow-md">
-            Free Quote
-          </Link>
+          <div className="hidden md:block">
+            <Link to="/contact" className="bg-ce-red hover:bg-red-700 text-white px-6 py-2 rounded-full font-bold transition-all transform hover:scale-105 shadow-md">
+              Free Quote
+            </Link>
+          </div>
+
+          <div className="md:hidden flex items-center">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-white hover:text-ce-yellow focus:outline-none"
+            >
+              {isOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
+          </div>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="md:hidden bg-ce-black border-t border-white/10 absolute w-full left-0 z-50">
+          <div className="px-4 pt-4 pb-6 space-y-4 flex flex-col shadow-2xl">
+            <Link to="/" onClick={() => setIsOpen(false)} className="block hover:text-ce-yellow transition-colors text-lg font-medium">Home</Link>
+            <Link to="/about" onClick={() => setIsOpen(false)} className="block hover:text-ce-yellow transition-colors text-lg font-medium">About Us</Link>
+            <div className="space-y-2 pt-2 pb-2">
+              <div className="font-bold text-ce-yellow uppercase text-sm tracking-wider mb-2">Services</div>
+              <div className="pl-4 space-y-3 flex flex-col border-l border-white/10">
+                <Link to="/services/gutters" onClick={() => setIsOpen(false)} className="block hover:text-ce-yellow transition-colors">Gutter Services</Link>
+                <Link to="/services/home-improvement" onClick={() => setIsOpen(false)} className="block hover:text-ce-yellow transition-colors">Home Improvement</Link>
+                <Link to="/services/windows" onClick={() => setIsOpen(false)} className="block hover:text-ce-yellow transition-colors">Window Installation</Link>
+              </div>
+            </div>
+            <Link to="/contact" onClick={() => setIsOpen(false)} className="block hover:text-ce-yellow transition-colors text-lg font-medium">Contact</Link>
+            <div className="pt-4 border-t border-white/10">
+              <Link to="/contact" onClick={() => setIsOpen(false)} className="inline-block bg-ce-red hover:bg-red-700 text-white px-8 py-3 rounded-full font-bold transition-all shadow-md w-full text-center">
+                Free Quote
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
