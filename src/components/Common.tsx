@@ -11,7 +11,7 @@ export const Navbar = () => {
         <div className="flex justify-between h-24 items-center">
           <Link to="/" className="flex items-center group">
             <img 
-              src="/logo.svg" 
+              src="/logo.png" 
               alt="C&E Seamless Gutters" 
               className="h-16 md:h-20 w-auto object-contain transition-transform duration-700 group-hover:scale-105 filter brightness-0 invert opacity-90"
               referrerPolicy="no-referrer"
@@ -91,7 +91,7 @@ export const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-16">
             <div className="md:col-span-2">
               <img 
-                src="/logo.svg" 
+                src="/logo.png" 
                 alt="C&E Seamless Gutters" 
                 className="h-20 w-auto object-contain mb-8 filter brightness-0 invert opacity-90"
                 referrerPolicy="no-referrer"
