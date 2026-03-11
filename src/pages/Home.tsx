@@ -65,7 +65,7 @@ export const Home = () => {
             <p className="text-xl text-gray-200 mb-10 leading-relaxed">
               From gutters to windows, we provide expert home improvement services with a personal touch. Licensed, bonded, and insured.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 pb-12 md:pb-0">
+            <div className="flex flex-col sm:flex-row gap-4 pb-24 md:pb-0">
               <Link to="/contact" className="bg-ce-red hover:bg-red-700 text-white px-10 py-4 rounded-full font-bold text-lg text-center transition-all shadow-xl transform hover:-translate-y-1">
                 Request a Quote
               </Link>
