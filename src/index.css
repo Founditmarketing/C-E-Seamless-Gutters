@@ -5,91 +5,98 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Playfair Display", serif;
   
-  --color-ce-red: #C8102E;
-  --color-ce-yellow: #D4AF37;
-  --color-ce-black: #0F172A;
+  --color-ce-red: #990000;
+  --color-ce-yellow: #E5C07B;
+  --color-ce-black: #050505;
+  --color-ce-charcoal: #111111;
 }
 
 @layer base {
   body {
-    @apply font-sans text-ce-black antialiased bg-slate-50 selection:bg-ce-yellow/30;
+    @apply font-sans text-white antialiased bg-ce-black selection:bg-ce-yellow/30 selection:text-ce-black overscroll-none;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif tracking-tight;
+    @apply font-serif tracking-tighter leading-none;
   }
   
   p {
-    @apply leading-relaxed;
+    @apply leading-relaxed font-light tracking-[0.02em];
   }
 }
 
 @layer utilities {
   .glass {
-    @apply bg-white/70 backdrop-blur-xl border border-white/20 shadow-xl;
+    @apply bg-ce-charcoal/50 backdrop-blur-2xl border border-white/5 shadow-2xl;
   }
   
-  .glass-dark {
-    @apply bg-ce-black/80 backdrop-blur-xl border border-white/10 shadow-2xl;
+  .glass-light {
+    @apply bg-white/5 backdrop-blur-2xl border border-white/10 shadow-2xl;
   }
 
-  .text-glow {
-    text-shadow: 0 0 40px rgba(255, 255, 255, 0.4);
+  /* Text Effects */
+  .text-glow-gold {
+    text-shadow: 0 0 40px rgba(229, 192, 123, 0.4);
+  }
+  
+  .text-outline {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+  }
+  
+  .text-outline:hover {
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke: 1px transparent;
+    transition: all 0.5s ease;
+  }
+  
+  /* Mask block reveal utility */
+  .reveal-block {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  /* Subtle noise texture for physical feel */
+  .bg-noise {
+    position: relative;
+  }
+  .bg-noise::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 50;
   }
 }
 
 /* Custom premium card animations */
-.premium-card {
-  @apply relative overflow-hidden rounded-3xl cursor-pointer shadow-xl transition-shadow hover:shadow-2xl border border-gray-100;
+.editorial-card {
+  @apply relative overflow-hidden cursor-pointer border border-white/5 bg-ce-charcoal;
 }
 
-.premium-card img {
-  @apply transition-transform duration-700 ease-out;
+.editorial-card img {
+  @apply transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)] filter grayscale opacity-70;
 }
 
-.premium-card:hover img {
-  @apply scale-105;
+.editorial-card:hover img {
+  @apply scale-105 filter-none opacity-100;
 }
 
-.premium-card-overlay {
-  @apply absolute inset-0 bg-gradient-to-t from-ce-black/90 via-ce-black/20 to-transparent 
-         opacity-80 transition-opacity duration-500;
+.editorial-card-overlay {
+  @apply absolute inset-0 bg-gradient-to-t from-ce-black via-transparent to-transparent 
+         opacity-90 transition-opacity duration-700 ease-[cubic-bezier(0.25,1,0.5,1)];
 }
 
-.premium-card:hover .premium-card-overlay {
-  @apply opacity-100;
-}
-
-.premium-card-content {
-  @apply absolute bottom-0 left-0 right-0 p-8 transform translate-y-4
-         transition-transform duration-500 ease-out flex flex-col justify-end h-full;
-}
-
-.premium-card:hover .premium-card-content {
-  @apply translate-y-0;
-}
-
-.premium-card-action {
-  @apply opacity-0 transform translate-y-4
-         transition-all duration-500 ease-out flex items-center text-ce-yellow font-medium mt-6;
-}
-
-.premium-card:hover .premium-card-action {
-  @apply opacity-100 translate-y-0;
-}
-
-/* Subtle background meshes */
-.bg-mesh-light {
-  background-color: #f8fafc;
-  background-image: radial-gradient(at 0% 0%, hsla(253,16%,7%,0.03) 0, transparent 50%), radial-gradient(at 50% 0%, hsla(225,39%,30%,0.03) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(339,49%,30%,0.03) 0, transparent 50%);
+.editorial-card:hover .editorial-card-overlay {
+  @apply opacity-60;
 }
 
 /* Page Hero Premium Animation */
-@keyframes kenburns {
-  0% { transform: scale(1.08); }
-  100% { transform: scale(1); }
+@keyframes kenburns-slow {
+  0% { transform: scale(1.15) translate(0, 0); }
+  100% { transform: scale(1) translate(-2%, 2%); }
 }
 
 .animate-ken-burns {
-  animation: kenburns 20s ease-out forwards;
+  animation: kenburns-slow 30s ease-out forwards;
 }

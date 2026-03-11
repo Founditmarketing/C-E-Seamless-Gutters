@@ -1,178 +1,183 @@
 import { motion } from 'motion/react';
-import { ArrowRight, CheckCircle, Star } from 'lucide-react';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
-const ServiceCard = ({ title, image, description, link }: { title: string, image: string, description: string, link: string }) => {
-  const isContain = image.includes("8.png");
-  return (
-    <Link to={link} className="premium-card block h-[450px] w-full bg-white">
-      <img 
-        src={image} 
-        alt={title} 
-        className={`h-full w-full ${isContain ? 'object-contain p-8 mix-blend-multiply' : 'object-cover'}`} 
-        referrerPolicy="no-referrer" 
-      />
-      <div className="premium-card-overlay"></div>
-      <div className="premium-card-content">
-        <h3 className="text-3xl font-serif font-bold text-white mb-3 text-glow">{title}</h3>
-        <p className="text-gray-200 leading-relaxed text-lg line-clamp-3">
-          {description}
-        </p>
-        <div className="premium-card-action">
-          <span>Explore Service</span>
-          <ArrowRight size={20} className="ml-2" />
-        </div>
-      </div>
-    </Link>
-  );
-};
 
 export const Home = () => {
   return (
-    <div className="overflow-hidden bg-ce-black">
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center overflow-hidden">
-        <div className="absolute inset-0 z-0 bg-ce-black">
+    <div className="bg-ce-black text-white selection:bg-ce-yellow/30 selection:text-ce-black">
+      {/* 1. The Cinematic Hero */}
+      <section className="relative h-screen w-full overflow-hidden flex items-center pt-24">
+        {/* Parallax Background */}
+        <div className="absolute inset-0 z-0">
           <img 
             src="/garbergutterafter02.png" 
-            alt="Beautiful Home" 
-            className="w-full h-full object-cover opacity-60 animate-ken-burns"
+            alt="Premium Home Exterior" 
+            className="w-full h-full object-cover opacity-60 filter grayscale-[30%] animate-ken-burns"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-ce-black via-ce-black/40 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-ce-black via-ce-black/80 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-ce-black via-transparent to-transparent"></div>
+          <div className="absolute inset-0 bg-noise opacity-50 mixing-blend-overlay"></div>
         </div>
-        
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-20">
+
+        {/* Editorial Front Layer */}
+        <div className="relative z-10 w-full max-w-[90rem] mx-auto px-6 sm:px-10 lg:px-16 flex flex-col justify-center h-full pb-20">
           <motion.div 
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            className="max-w-3xl"
+            transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="inline-block glass text-white px-6 py-2 rounded-full font-bold text-sm mb-8 tracking-[0.2em] uppercase">
-              Premium Home Services
+            <div className="flex items-center space-x-6 mb-12">
+              <div className="h-px w-16 bg-ce-yellow"></div>
+              <span className="text-[0.65rem] uppercase tracking-[0.3em] font-bold text-ce-yellow">Est. 2009 &bull; Lake Charles</span>
             </div>
-            <h1 className="text-6xl md:text-8xl font-serif font-bold text-white mb-8 leading-[1.1]">
-              Elevating Your <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-ce-yellow to-yellow-200 italic pr-4">Home's Potential</span>
+            
+            <h1 className="text-[14vw] md:text-[8rem] lg:text-[11rem] leading-[0.8] font-serif font-bold tracking-tighter mix-blend-screen relative z-20">
+              <span className="block text-white">REDEFINE</span>
+              <span className="block text-outline text-ce-yellow mt-4">EXTERIORS.</span>
             </h1>
-            <p className="text-2xl text-gray-300 mb-12 leading-relaxed font-light max-w-2xl">
-              World-class gutter and window installations crafted with precision, backed by our lifetime commitment to excellence.
+          </motion.div>
+
+          {/* Floating Detail Box */}
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1.5, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="md:absolute right-16 bottom-32 max-w-sm mt-16 md:mt-0"
+          >
+            <p className="font-light text-xl md:text-2xl leading-relaxed text-gray-300 mb-8 border-l border-white/20 pl-6">
+              World-class gutter architecture and structural home enhancements curated for the discerning homeowner.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 pb-24 md:pb-0">
-              <Link to="/contact" className="bg-ce-red hover:bg-red-700 text-white px-10 py-5 rounded-full font-bold text-lg text-center transition-all shadow-[0_0_30px_rgba(200,16,46,0.3)] transform hover:-translate-y-1">
-                Request a Quote
-              </Link>
-              <Link to="/about" className="glass hover:bg-white/20 text-white px-10 py-5 rounded-full font-bold text-lg text-center transition-all">
-                Discover Our Craft
-              </Link>
+            <div className="flex items-center gap-6 pl-6">
+              <span className="text-[0.65rem] uppercase tracking-[0.2em] font-bold text-white">Explore the portfolio</span>
+              <motion.div 
+                animate={{ x: [0, 8, 0] }} 
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                className="w-12 h-12 rounded-full border border-ce-yellow flex items-center justify-center text-ce-yellow"
+              >
+                <ArrowRight size={18} />
+              </motion.div>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Trust Signals */}
-      <section className="relative z-20 mx-4 sm:mx-8 lg:mx-auto max-w-7xl" style={{ marginTop: '-120px' }}>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 px-4">
-          {[
-            { title: "Licensed & Bonded", icon: CheckCircle },
-            { title: "Fully Insured", icon: CheckCircle },
-            { title: "Complimentary Consults", icon: CheckCircle },
-            { title: "Expert Craftsmanship", icon: CheckCircle }
-          ].map((signal, i) => (
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1, duration: 0.6 }}
-              viewport={{ once: true, margin: "-50px" }}
-              key={i} 
-              className="glass p-6 md:p-8 rounded-[2rem] flex flex-col items-center justify-center text-center transform hover:-translate-y-2 transition-transform duration-500"
-            >
-              <signal.icon className="text-ce-yellow mb-5" size={44} strokeWidth={1.5} />
-              <span className="font-bold text-white text-lg tracking-wide">{signal.title}</span>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* Service Trio */}
-      <section className="py-32 bg-slate-50 relative mt-20">
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-24">
-            <h2 className="text-5xl md:text-6xl font-serif font-bold mb-6 text-ce-black tracking-tight">Bespoke Services</h2>
-            <div className="w-24 h-1 bg-ce-red mx-auto mb-8"></div>
-            <p className="text-gray-600 max-w-2xl mx-auto text-xl font-light leading-relaxed">
-              Elevate your property with our premium selection of tailored exterior and interior improvements.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <ServiceCard 
-              title="Gutter Services" 
-              image="/bridgetgutterafter01.png"
-              description="Protect your foundation and landscaping with our professional gutter installation, cleaning, and repair services."
-              link="/services/gutters"
-            />
-            <ServiceCard 
-              title="Home Improvement" 
-              image="/AGS-Outdoor-Living-Space-1.jpg"
-              description="Transform your living space with our expert home improvement solutions, from minor repairs to major renovations."
-              link="/services/home-improvement"
-            />
-            <ServiceCard 
-              title="Window Installation" 
-              image="/8_window_awning_concave_bronze.png"
-              description="Enhance energy efficiency and curb appeal with our high-quality window installation and replacement services."
-              link="/services/windows"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Word on the Street (Testimonials) */}
-      <section className="py-32 bg-ce-black text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-mesh-light opacity-5"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-24">
-            <h2 className="text-5xl md:text-6xl font-serif font-bold mb-6 tracking-tight">Client Experiences</h2>
-            <div className="w-24 h-1 bg-ce-yellow mx-auto mb-8"></div>
-            <p className="text-gray-400 max-w-2xl mx-auto text-xl font-light leading-relaxed">
-              Read what our discerning clients have to say about our commitment to unparalleled quality.
-            </p>
-          </div>
-          
-          <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
-            {[
-              { name: "Sarah Johnson", text: "C&E Seamless Gutters delivered a masterclass in professionalism. The quality of the installation is immediately evident from the curb.", rating: 5 },
-              { name: "Michael Chen", text: "They transformed our exterior completely. The attention to detail and premium materials used exceeded all our expectations.", rating: 5 },
-              { name: "David Wilson", text: "The new architectural windows they installed are stunning. The entire process was seamless from consultation to cleanup.", rating: 5 },
-              { name: "Emily Rodriguez", text: "True artisans of their craft. The custom gutter profiles they designed matched our historic home perfectly.", rating: 5 },
-              { name: "Robert Taylor", text: "An absolute pleasure to work with. They approach home improvement with the precision of fine woodworking.", rating: 5 },
-              { name: "Lisa Anderson", text: "The definitive choice for luxury home exteriors in the area. We wouldn't trust our property to anyone else.", rating: 5 },
-            ].map((testimonial, i) => (
-              <motion.div 
+      {/* 2. The Philosophy (Pinned Depth Section) */}
+      <section className="relative py-40 z-20 bg-ce-black bg-noise border-t border-white/5">
+        <div className="max-w-[90rem] mx-auto px-6 sm:px-10 lg:px-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+            <div className="lg:col-span-4 sticky top-40">
+              <h4 className="text-[0.65rem] uppercase tracking-[0.3em] font-bold text-gray-500 mb-6">Our Philosophy</h4>
+              <h2 className="text-5xl md:text-7xl font-serif leading-[0.9] tracking-tighter text-white">
+                PRECISION<br/><span className="italic text-gray-500">above all.</span>
+              </h2>
+            </div>
+            
+            <div className="lg:col-span-7 lg:col-start-6 space-y-16">
+              <motion.p 
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: (i % 3) * 0.15, duration: 0.7 }}
-                viewport={{ once: true, margin: "-50px" }}
-                key={i} 
-                className="break-inside-avoid glass-dark p-10 rounded-[2rem] relative overflow-hidden group shadow-2xl shadow-black/50"
+                transition={{ duration: 1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                className="text-3xl md:text-5xl font-light leading-tight text-gray-300"
               >
-                <div className="absolute -top-6 -left-4 text-9xl text-white/5 font-serif leading-none rotate-12 group-hover:text-ce-yellow/10 transition-colors duration-700">"</div>
-                <div className="flex text-ce-yellow mb-6 relative z-10">
-                  {[...Array(testimonial.rating)].map((_, i) => <Star key={i} size={18} fill="currentColor" />)}
+                We don't merely install; we <strong className="text-white font-serif italic">architect solutions</strong>. Every home presents a unique structural canvas requiring bespoke craftsmanship and uncompromising materials.
+              </motion.p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 pt-12 border-t border-white/10">
+                <div>
+                  <h3 className="text-ce-yellow font-serif text-3xl mb-4">01</h3>
+                  <h4 className="text-xl font-bold mb-4 uppercase tracking-widest text-white text-[0.8rem]">Structural Integrity</h4>
+                  <p className="text-gray-400 font-light leading-relaxed">Our installations are engineered to withstand the most severe environmental stresses, preserving your sanctuary globally.</p>
                 </div>
-                <p className="text-gray-300 mb-8 leading-relaxed text-lg relative z-10">"{testimonial.text}"</p>
-                <div className="flex items-center relative z-10">
-                  <div className="w-12 h-12 bg-gradient-to-br from-ce-red to-red-900 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4 shadow-lg">
-                    {testimonial.name[0]}
-                  </div>
-                  <span className="font-bold text-white tracking-wide">{testimonial.name}</span>
+                <div>
+                  <h3 className="text-ce-yellow font-serif text-3xl mb-4">02</h3>
+                  <h4 className="text-xl font-bold mb-4 uppercase tracking-widest text-white text-[0.8rem]">Aesthetic Masterclass</h4>
+                  <p className="text-gray-400 font-light leading-relaxed">Utility should never compromise design. Our profiles are milled to complement and elevate your home's unique architecture.</p>
                 </div>
-              </motion.div>
-            ))}
+              </div>
+            </div>
           </div>
+        </div>
+      </section>
+
+      {/* 3. The Bespoke Services (Asymmetrical Masonry Grid) */}
+      <section className="py-40 bg-ce-charcoal relative">
+        <div className="max-w-[90rem] mx-auto px-6 sm:px-10 lg:px-16">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-24">
+            <div>
+              <h4 className="text-[0.65rem] uppercase tracking-[0.3em] font-bold text-ce-yellow mb-6">Disciplines</h4>
+              <h2 className="text-6xl md:text-8xl font-serif text-white leading-none tracking-tighter">THE CRAFT.</h2>
+            </div>
+            <Link to="/contact" className="group hidden md:flex items-center space-x-4 border-b border-ce-yellow pb-2 mt-8 md:mt-0">
+              <span className="text-[0.75rem] uppercase tracking-[0.2em] font-bold text-ce-yellow group-hover:text-white transition-colors">Commission a Project</span>
+              <ArrowUpRight size={18} className="text-ce-yellow group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16">
+            {/* Massive Lead Item */}
+            <Link to="/services/gutters" className="editorial-card md:col-span-8 h-[600px] md:h-[800px] flex items-end">
+              <img src="/bridgetgutterafter01.png" alt="Gutter Architecture" className="absolute inset-0 w-full h-full object-cover" referrerPolicy="no-referrer" />
+              <div className="editorial-card-overlay"></div>
+              <div className="relative z-10 p-10 md:p-16 w-full">
+                <h3 className="text-[0.7rem] uppercase tracking-[0.3em] font-bold text-ce-yellow mb-4 border-l border-ce-yellow pl-4">Primary Discipline</h3>
+                <h2 className="text-5xl md:text-7xl font-serif text-white mb-6">Gutter Architecture</h2>
+                <div className="flex items-center justify-between border-t border-white/20 pt-8 mt-12 group-hover:border-white transition-colors">
+                  <span className="font-light text-xl text-gray-300 group-hover:text-white transition-colors">Precision water management systems</span>
+                  <div className="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-ce-yellow group-hover:text-ce-black transition-all">
+                    <ArrowUpRight size={24} />
+                  </div>
+                </div>
+              </div>
+            </Link>
+
+            {/* Stacked Narrow Items */}
+            <div className="md:col-span-4 flex flex-col gap-8 md:gap-16">
+              <Link to="/services/home-improvement" className="editorial-card h-[400px] flex items-end">
+                <img src="/AGS-Outdoor-Living-Space-1.jpg" alt="Restoration" className="absolute inset-0 w-full h-full object-cover" referrerPolicy="no-referrer" />
+                <div className="editorial-card-overlay"></div>
+                <div className="relative z-10 p-8 w-full">
+                  <h2 className="text-4xl font-serif text-white mb-4">Interior Restoration</h2>
+                  <div className="flex items-center justify-between border-t border-white/20 pt-6 mt-8">
+                    <span className="font-light text-gray-300">Bespoke home refinement</span>
+                    <ArrowUpRight size={20} className="text-ce-yellow" />
+                  </div>
+                </div>
+              </Link>
+              
+              <Link to="/services/windows" className="editorial-card h-[400px] flex items-end">
+                <img src="/8_window_awning_concave_bronze.png" alt="Fenestration" className="absolute inset-0 w-full h-full object-cover" referrerPolicy="no-referrer" />
+                <div className="editorial-card-overlay"></div>
+                <div className="relative z-10 p-8 w-full">
+                  <h2 className="text-4xl font-serif text-white mb-4">Fenestration</h2>
+                  <div className="flex items-center justify-between border-t border-white/20 pt-6 mt-8">
+                    <span className="font-light text-gray-300">High-efficiency windows</span>
+                    <ArrowUpRight size={20} className="text-ce-yellow" />
+                  </div>
+                </div>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. The Statement (Massive Typographic Marquee/Quote) */}
+      <section className="py-40 bg-ce-black text-white overflow-hidden border-t border-b border-white/5">
+        <div className="max-w-[120rem] mx-auto">
+          <motion.div 
+            initial={{ x: "10%" }}
+            whileInView={{ x: "-10%" }}
+            transition={{ duration: 10, ease: "linear", repeat: Infinity, repeatType: "reverse" }}
+            className="whitespace-nowrap flex items-center"
+          >
+            <h2 className="text-[15vw] font-serif font-bold tracking-tighter leading-none text-outline inline-block mr-12 hover:-webkit-text-fill-color-white transition-all duration-1000">
+              UNCOMPROMISING QUALITY.
+            </h2>
+            <h2 className="text-[15vw] font-serif font-bold tracking-tighter leading-none text-white inline-block">
+              ENDURING DESIGN.
+            </h2>
+          </motion.div>
         </div>
       </section>
     </div>
