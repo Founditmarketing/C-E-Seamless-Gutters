@@ -136,13 +136,13 @@ export const HomeImprovement = () => (
     <PageHero 
       title="Home Improvement" 
       subtitle="Bringing Your Vision to Life" 
-      image="/AdobeStock_458721564.jpeg"
+      image="/pergolanightwithlights.jpeg"
     />
     <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div className="order-2 lg:order-1">
           <img 
-            src="/IMG_3578-scaled.jpeg" 
+            src="/construction-13.jpg" 
             alt="Interior renovation" 
             className="rounded-3xl shadow-2xl"
             referrerPolicy="no-referrer"

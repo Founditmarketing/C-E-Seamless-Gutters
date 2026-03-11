@@ -119,7 +119,7 @@ export const Home = () => {
             />
             <ServiceCard 
               title="Home Improvement" 
-              image="/IMG_2193-scaled.jpeg"
+              image="/AGS-Outdoor-Living-Space-1.jpg"
               description="Transform your living space with our expert home improvement solutions, from minor repairs to major renovations."
               link="/services/home-improvement"
             />
