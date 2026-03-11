@@ -144,7 +144,8 @@ export const HomeImprovement = () => (
           <img 
             src="/8.png" 
             alt="Interior renovation" 
-            className="rounded-3xl shadow-2xl"
+            className="rounded-3xl shadow-2xl object-cover"
+            style={{ maxHeight: '600px', width: '100%' }}
             referrerPolicy="no-referrer"
           />
         </div>

@@ -7,9 +7,11 @@ const ServiceCard = ({ title, image, description, link }: { title: string, image
     <div className="flip-card h-[400px] w-full">
       <div className="flip-card-inner">
         {/* Front */}
-        <div className="flip-card-front bg-white shadow-xl overflow-hidden border border-gray-100">
-          <img src={image} alt={title} className="h-full w-full object-cover" referrerPolicy="no-referrer" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8 text-left">
+        <div className="flip-card-front bg-white shadow-xl overflow-hidden border border-gray-100 flex flex-col">
+          <div className="h-full w-full bg-white flex items-center justify-center p-4">
+            <img src={image} alt={title} className="max-h-full max-w-full object-contain mix-blend-multiply" referrerPolicy="no-referrer" />
+          </div>
+          <div className="absolute inset-0 flex flex-col justify-end p-8 text-left bg-gradient-to-t from-black/80 via-black/40 to-black/10">
             <h3 className="text-2xl font-serif font-bold text-white mb-2">{title}</h3>
             <div className="flex items-center text-ce-yellow font-medium">
               <span>Learn More</span>
