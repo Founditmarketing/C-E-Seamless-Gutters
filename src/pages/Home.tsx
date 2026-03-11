@@ -40,7 +40,7 @@ export const Home = () => {
       <section className="relative h-[85vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1920" 
+            src="/garbergutterafter02.png" 
             alt="Beautiful Home" 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
@@ -113,19 +113,19 @@ export const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <ServiceCard 
               title="Gutter Services" 
-              image="https://images.unsplash.com/photo-1621905252507-b354bcadcabc?auto=format&fit=crop&q=80&w=800"
+              image="/bridgetgutterafter01.png"
               description="Protect your foundation and landscaping with our professional gutter installation, cleaning, and repair services."
               link="/services/gutters"
             />
             <ServiceCard 
               title="Home Improvement" 
-              image="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=800"
+              image="/IMG_2193-scaled.jpeg"
               description="Transform your living space with our expert home improvement solutions, from minor repairs to major renovations."
               link="/services/home-improvement"
             />
             <ServiceCard 
               title="Window Installation" 
-              image="https://images.unsplash.com/photo-1503708928676-1cb796a0891e?auto=format&fit=crop&q=80&w=800"
+              image="/8_window_awning_concave_bronze.png"
               description="Enhance energy efficiency and curb appeal with our high-quality window installation and replacement services."
               link="/services/windows"
             />

@@ -32,7 +32,7 @@ export const About = () => (
     <PageHero 
       title="About Us" 
       subtitle="Your Trusted Neighbor in Seamless Gutters" 
-      image="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&q=80&w=1920"
+      image="/handyman_11.png"
     />
     <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
@@ -53,7 +53,7 @@ export const About = () => (
         </div>
         <div className="relative">
           <img 
-            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=800" 
+            src="/handyman_15.png" 
             alt="Team at work" 
             className="rounded-3xl shadow-2xl"
             referrerPolicy="no-referrer"
@@ -73,7 +73,7 @@ export const Gutters = () => (
     <PageHero 
       title="Gutter Services" 
       subtitle="Protecting Your Home from the Top Down" 
-      image="https://images.unsplash.com/photo-1621905252507-b354bcadcabc?auto=format&fit=crop&q=80&w=1920"
+      image="/gutterhouse02.jpeg"
     />
     <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto text-center mb-16">
@@ -88,17 +88,17 @@ export const Gutters = () => (
           { 
             title: "Installation", 
             desc: "Custom-fit seamless gutters designed to match your home's aesthetic and handle heavy rainfall.",
-            image: "https://images.unsplash.com/photo-1621905252507-b354bcadcabc?auto=format&fit=crop&q=80&w=800"
+            image: "/gutterinstallwithhand.jpeg"
           },
           { 
             title: "Cleaning", 
             desc: "Thorough removal of debris to ensure free-flowing water and prevent clogs and overflows.",
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=800"
+            image: "/browngutterwithsquirrel.jpeg"
           },
           { 
             title: "Repair", 
             desc: "Expert fixing of leaks, sags, and damaged sections to restore your system's integrity.",
-            image: "https://images.unsplash.com/photo-1516714819001-8ee7a13b71d7?auto=format&fit=crop&q=80&w=800"
+            image: "/guttermachine01.jpeg"
           },
         ].map((item, i) => (
           <div key={i} className="bg-white rounded-3xl shadow-xl border border-gray-100 hover:-translate-y-2 transition-all overflow-hidden">
@@ -136,13 +136,13 @@ export const HomeImprovement = () => (
     <PageHero 
       title="Home Improvement" 
       subtitle="Bringing Your Vision to Life" 
-      image="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=1920"
+      image="/AdobeStock_458721564.jpeg"
     />
     <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div className="order-2 lg:order-1">
           <img 
-            src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=800" 
+            src="/IMG_3578-scaled.jpeg" 
             alt="Interior renovation" 
             className="rounded-3xl shadow-2xl"
             referrerPolicy="no-referrer"
@@ -185,7 +185,7 @@ export const Windows = () => (
     <PageHero 
       title="Window Installation" 
       subtitle="Efficiency Meets Elegance" 
-      image="https://images.unsplash.com/photo-1503708928676-1cb796a0891e?auto=format&fit=crop&q=80&w=1920"
+      image="/8_window_awning_concave_bronze.png"
     />
     <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-20">
@@ -241,7 +241,7 @@ export const Contact = () => (
     <PageHero 
       title="Contact Us" 
       subtitle="We're Here to Help" 
-      image="https://images.unsplash.com/photo-1534536281715-e28d76689b4d?auto=format&fit=crop&q=80&w=1920"
+      image="/IMG_7074-scaled.jpg"
     />
     <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <motion.div
