@@ -6,18 +6,18 @@ const PageHero = ({ title, subtitle, image, sectionNumber }: { title: string; su
   return (
     <section className="relative h-[80vh] flex items-end overflow-hidden bg-ce-black pb-24 pt-32">
       <div className="absolute inset-0 z-0">
-        <img 
-          src={image} 
-          alt={title} 
-          className="w-full h-full object-cover opacity-40 filter grayscale animate-ken-burns" 
-          referrerPolicy="no-referrer" 
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover opacity-40 filter grayscale animate-ken-burns"
+          referrerPolicy="no-referrer"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ce-black via-ce-black/80 to-ce-charcoal/50"></div>
         <div className="absolute inset-0 bg-noise opacity-30 mixing-blend-overlay"></div>
       </div>
-      
+
       <div className="relative z-10 w-full max-w-[90rem] mx-auto px-6 sm:px-10 lg:px-16 flex flex-col md:flex-row justify-between items-end gap-12">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
@@ -31,8 +31,8 @@ const PageHero = ({ title, subtitle, image, sectionNumber }: { title: string; su
             {title.toUpperCase()}
           </h1>
         </motion.div>
-        
-        <motion.div 
+
+        <motion.div
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
@@ -49,23 +49,23 @@ const PageHero = ({ title, subtitle, image, sectionNumber }: { title: string; su
 
 export const About = () => (
   <div className="bg-ce-black text-white selection:bg-ce-yellow/30 selection:text-ce-black">
-    <PageHero 
+    <PageHero
       sectionNumber="001"
-      title="The Firm." 
-      subtitle="Craftsmanship forged in Lake Charles, defining modern exteriors." 
-      image="/handyman_11.png"
+      title="The Firm."
+      subtitle="Craftsmanship forged in Lake Charles, defining modern exteriors."
+      image="/After_CE_1.png"
     />
-    
+
     <section className="py-40 bg-ce-charcoal relative">
       <div className="max-w-[90rem] mx-auto px-6 sm:px-10 lg:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 md:gap-24">
           <div className="lg:col-span-5">
             <h2 className="text-4xl md:text-6xl font-serif leading-[1.1] text-white tracking-tighter sticky top-40 text-outline mix-blend-screen">
-              ENGINEERING<br/>
+              ENGINEERING<br />
               <span className="text-white">AESTHETICS.</span>
             </h2>
           </div>
-          
+
           <div className="lg:col-span-7 space-y-20 font-light text-2xl md:text-3xl leading-relaxed text-gray-400">
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -75,7 +75,7 @@ export const About = () => (
             >
               C&E Seamless Gutters operates at the intersection of structural engineering and architectural beauty. We believe the exterior envelope of a building is its paramount defense and its absolute signature.
             </motion.p>
-            
+
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -87,24 +87,24 @@ export const About = () => (
                 "Our master craftsmen don't just work on houses; they curate sanctuaries."
               </p>
             </motion.div>
-            
+
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
               viewport={{ once: true, margin: "-100px" }}
             >
-              Every material selected, every profile extruded, and every fastener driven is executed with an obsessive attention to detail that standard contractors simply cannot replicate. 
+              Every material selected, every profile extruded, and every fastener driven is executed with an obsessive attention to detail that standard contractors simply cannot replicate.
             </motion.p>
           </div>
         </div>
       </div>
     </section>
-    
+
     <section className="py-0 relative h-screen w-full overflow-hidden">
-      <img 
-        src="/handyman_15.png" 
-        alt="Artisan at work" 
+      <img
+        src="/about_lower_v2.png"
+        alt="Artisan at work"
         className="absolute inset-0 w-full h-full object-cover filter grayscale-[50%] opacity-80"
         referrerPolicy="no-referrer"
       />
@@ -118,13 +118,13 @@ export const About = () => (
 
 export const Gutters = () => (
   <div className="bg-ce-black text-white selection:bg-ce-yellow/30 selection:text-ce-black">
-    <PageHero 
+    <PageHero
       sectionNumber="002"
-      title="Gutters." 
-      subtitle="Structural Water Management Systems" 
+      title="Gutters."
+      subtitle="Structural Water Management Systems"
       image="/gutterhouse02.jpeg"
     />
-    
+
     <section className="py-40 bg-ce-charcoal relative">
       <div className="max-w-[90rem] mx-auto px-6 sm:px-10 lg:px-16">
         <div className="mb-32">
@@ -141,32 +141,32 @@ export const Gutters = () => (
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
-            { 
-              title: "Installation", 
+            {
+              title: "Installation",
               desc: "Milled on-site to exact structural specifications. Seamless runs eliminate weak points, paired with hidden heavy-duty hangers for an unblemished profile.",
               image: "/gutterinstallwithhand.jpeg"
             },
-            { 
-              title: "Restoration", 
+            {
+              title: "Restoration",
               desc: "Comprehensive diagnostic and surgical repair protocols. We rectify pitch issues and seal catastrophic failures with industrial-grade precision.",
               image: "/guttermachine01.jpeg"
             },
-            { 
-              title: "Maintenance", 
+            {
+              title: "Maintenance",
               desc: "Preventative fluid dynamics management. We ensure zero obstruction to critical flow paths, extending the lifespan of the entire system.",
               image: "/browngutterwithsquirrel.jpeg"
             },
           ].map((item, i) => (
             <div key={i} className="editorial-card h-[600px] flex items-end border-white/10 group">
-               <img src={item.image} alt={item.title} className="absolute inset-0 h-full w-full object-cover filter grayscale mix-blend-luminosity group-hover:mix-blend-normal group-hover:grayscale-0 transition-all duration-1000" referrerPolicy="no-referrer" />
-               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90"></div>
-               <div className="relative z-10 p-10 w-full">
-                 <h3 className="text-[0.65rem] uppercase tracking-[0.3em] font-bold text-ce-yellow mb-4 border-l border-ce-yellow pl-4">Service {i + 1}</h3>
-                 <h4 className="text-5xl font-serif font-bold text-white mb-6 text-outline group-hover:text-white transition-all">{item.title}</h4>
-                 <p className="text-gray-400 font-light text-lg opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-700">
-                   {item.desc}
-                 </p>
-               </div>
+              <img src={item.image} alt={item.title} className="absolute inset-0 h-full w-full object-cover filter grayscale mix-blend-luminosity group-hover:mix-blend-normal group-hover:grayscale-0 transition-all duration-1000" referrerPolicy="no-referrer" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90"></div>
+              <div className="relative z-10 p-10 w-full">
+                <h3 className="text-[0.65rem] uppercase tracking-[0.3em] font-bold text-ce-yellow mb-4 border-l border-ce-yellow pl-4">Service {i + 1}</h3>
+                <h4 className="text-5xl font-serif font-bold text-white mb-6 text-outline group-hover:text-white transition-all">{item.title}</h4>
+                <p className="text-gray-400 font-light text-lg opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-700">
+                  {item.desc}
+                </p>
+              </div>
             </div>
           ))}
         </div>
@@ -177,21 +177,21 @@ export const Gutters = () => (
 
 export const HomeImprovement = () => (
   <div className="bg-ce-black text-white selection:bg-ce-yellow/30 selection:text-ce-black">
-    <PageHero 
+    <PageHero
       sectionNumber="003"
-      title="Interiors." 
-      subtitle="Transformative bespoke restorations." 
+      title="Interiors."
+      subtitle="Transformative bespoke restorations."
       image="/AGS-Outdoor-Living-Space-1.jpg"
     />
-    
+
     <section className="py-40 bg-ce-charcoal relative">
       <div className="max-w-[90rem] mx-auto px-6 sm:px-10 lg:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
           <div className="order-2 lg:order-1 relative">
             <div className="absolute -inset-4 border border-white/10 transform -rotate-3"></div>
-            <img 
-              src="/AGS-Outdoor-Living-Space-1.jpg" 
-              alt="Interior Refinement" 
+            <img
+              src="/AGS-Outdoor-Living-Space-1.jpg"
+              alt="Interior Refinement"
               className="relative z-10 w-full shadow-2xl filter contrast-125"
               referrerPolicy="no-referrer"
             />
@@ -223,19 +223,19 @@ export const HomeImprovement = () => (
 
 export const Windows = () => (
   <div className="bg-ce-black text-white selection:bg-ce-yellow/30 selection:text-ce-black">
-    <PageHero 
+    <PageHero
       sectionNumber="004"
-      title="Fenestration." 
-      subtitle="High-performance architectural glazing." 
+      title="Fenestration."
+      subtitle="High-performance architectural glazing."
       image="/8_window_awning_concave_bronze.png"
     />
-    
+
     <section className="py-40 bg-ce-charcoal relative border-y border-white/5">
       <div className="max-w-[90rem] mx-auto px-6 sm:px-10 lg:px-16 text-center">
         <h2 className="text-4xl md:text-7xl font-serif font-bold mb-16 tracking-tighter max-w-5xl mx-auto leading-tight">
           FRAMING THE WORLD WITH <span className="text-ce-yellow font-italic">UNCOMPROMISING THERMAL EFFICIENCY.</span>
         </h2>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-24 text-left">
           {[
             { metric: "U-Factor", val: "Minimal", desc: "Maximum thermal resistance." },
@@ -257,21 +257,21 @@ export const Windows = () => (
 
 export const Contact = () => (
   <div className="bg-ce-black text-white selection:bg-ce-yellow/30 selection:text-ce-black">
-    <PageHero 
+    <PageHero
       sectionNumber="005"
-      title="Commission Us." 
-      subtitle="Engage our architectural firm." 
+      title="Commission Us."
+      subtitle="Engage our architectural firm."
       image="/IMG_7074-scaled.jpg"
     />
-    
+
     <section className="py-40 bg-ce-charcoal relative flex items-center justify-center min-h-[50vh]">
       <div className="text-center group">
         <a href="#quote-form" className="inline-block relative">
-          <span className="text-[10vw] font-serif font-bold tracking-tighter leading-none text-outline group-hover:-webkit-text-fill-color-transparent transition-all duration-700 block">
+          <span className="text-[10vw] font-serif font-bold tracking-tighter leading-none text-outline group-hover:opacity-0 transition-all duration-700 block">
             INITIATE
           </span>
           <span className="text-[10vw] font-serif font-bold tracking-tighter leading-none text-white absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
-             DIALOGUE.
+            DIALOGUE.
           </span>
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700 mt-12">
             <div className="w-20 h-20 rounded-full border border-ce-yellow flex items-center justify-center bg-ce-black text-ce-yellow shadow-2xl">
@@ -279,7 +279,7 @@ export const Contact = () => (
             </div>
           </div>
         </a>
-        <p className="mt-12 text-gray-400 font-light text-xl tracking-widest uppercase">Select to open dossier form below</p>
+        <p className="mt-12 text-gray-400 font-light text-xl tracking-widest uppercase">Click to get started</p>
       </div>
     </section>
   </div>

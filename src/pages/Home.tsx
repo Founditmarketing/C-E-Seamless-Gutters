@@ -9,9 +9,9 @@ export const Home = () => {
       <section className="relative h-screen w-full overflow-hidden flex items-center pt-24">
         {/* Parallax Background */}
         <div className="absolute inset-0 z-0">
-          <img 
-            src="/garbergutterafter02.png" 
-            alt="Premium Home Exterior" 
+          <img
+            src="/garbergutterafter02.png"
+            alt="Premium Home Exterior"
             className="w-full h-full object-cover opacity-60 filter grayscale-[30%] animate-ken-burns"
             referrerPolicy="no-referrer"
           />
@@ -22,7 +22,7 @@ export const Home = () => {
 
         {/* Editorial Front Layer */}
         <div className="relative z-10 w-full max-w-[90rem] mx-auto px-6 sm:px-10 lg:px-16 flex flex-col justify-center h-full pb-20">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
@@ -31,15 +31,15 @@ export const Home = () => {
               <div className="h-px w-16 bg-ce-yellow"></div>
               <span className="text-[0.65rem] uppercase tracking-[0.3em] font-bold text-ce-yellow">Est. 2009 &bull; Lake Charles</span>
             </div>
-            
-            <h1 className="text-[14vw] md:text-[8rem] lg:text-[11rem] leading-[0.8] font-serif font-bold tracking-tighter mix-blend-screen relative z-20">
+
+            <h1 className="text-[12vw] md:text-[6rem] lg:text-[8.5rem] leading-[0.8] font-serif font-bold tracking-tighter mix-blend-screen relative z-20">
               <span className="block text-white">REDEFINE</span>
               <span className="block text-outline text-ce-yellow mt-4">EXTERIORS.</span>
             </h1>
           </motion.div>
 
           {/* Floating Detail Box */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.5, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
@@ -48,16 +48,16 @@ export const Home = () => {
             <p className="font-light text-xl md:text-2xl leading-relaxed text-gray-300 mb-8 border-l border-white/20 pl-6">
               World-class gutter architecture and structural home enhancements curated for the discerning homeowner.
             </p>
-            <div className="flex items-center gap-6 pl-6">
+            <a href="#portfolio" className="flex items-center gap-6 pl-6 cursor-pointer group hover:opacity-80 transition-opacity">
               <span className="text-[0.65rem] uppercase tracking-[0.2em] font-bold text-white">Explore the portfolio</span>
-              <motion.div 
-                animate={{ x: [0, 8, 0] }} 
+              <motion.div
+                animate={{ x: [0, 8, 0] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                 className="w-12 h-12 rounded-full border border-ce-yellow flex items-center justify-center text-ce-yellow"
               >
                 <ArrowRight size={18} />
               </motion.div>
-            </div>
+            </a>
           </motion.div>
         </div>
       </section>
@@ -69,12 +69,12 @@ export const Home = () => {
             <div className="lg:col-span-4 sticky top-40">
               <h4 className="text-[0.65rem] uppercase tracking-[0.3em] font-bold text-gray-500 mb-6">Our Philosophy</h4>
               <h2 className="text-5xl md:text-7xl font-serif leading-[0.9] tracking-tighter text-white">
-                PRECISION<br/><span className="italic text-gray-500">above all.</span>
+                PRECISION<br /><span className="italic text-gray-500">above all.</span>
               </h2>
             </div>
-            
+
             <div className="lg:col-span-7 lg:col-start-6 space-y-16">
-              <motion.p 
+              <motion.p
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
@@ -83,7 +83,7 @@ export const Home = () => {
               >
                 We don't merely install; we <strong className="text-white font-serif italic">architect solutions</strong>. Every home presents a unique structural canvas requiring bespoke craftsmanship and uncompromising materials.
               </motion.p>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 pt-12 border-t border-white/10">
                 <div>
                   <h3 className="text-ce-yellow font-serif text-3xl mb-4">01</h3>
@@ -102,11 +102,11 @@ export const Home = () => {
       </section>
 
       {/* 3. The Bespoke Services (Asymmetrical Masonry Grid) */}
-      <section className="py-40 bg-ce-charcoal relative">
+      <section id="portfolio" className="py-40 bg-ce-charcoal relative">
         <div className="max-w-[90rem] mx-auto px-6 sm:px-10 lg:px-16">
           <div className="flex flex-col md:flex-row justify-between items-end mb-24">
             <div>
-              <h4 className="text-[0.65rem] uppercase tracking-[0.3em] font-bold text-ce-yellow mb-6">Disciplines</h4>
+              <h4 className="text-[0.65rem] uppercase tracking-[0.3em] font-bold text-ce-yellow mb-6">Our Portfolio</h4>
               <h2 className="text-6xl md:text-8xl font-serif text-white leading-none tracking-tighter">THE CRAFT.</h2>
             </div>
             <Link to="/contact" className="group hidden md:flex items-center space-x-4 border-b border-ce-yellow pb-2 mt-8 md:mt-0">
@@ -145,7 +145,7 @@ export const Home = () => {
                   </div>
                 </div>
               </Link>
-              
+
               <Link to="/services/windows" className="editorial-card h-[400px] flex items-end">
                 <img src="/8_window_awning_concave_bronze.png" alt="Fenestration" className="absolute inset-0 w-full h-full object-cover" referrerPolicy="no-referrer" />
                 <div className="editorial-card-overlay"></div>
@@ -165,7 +165,7 @@ export const Home = () => {
       {/* 4. The Statement (Massive Typographic Marquee/Quote) */}
       <section className="py-40 bg-ce-black text-white overflow-hidden border-t border-b border-white/5">
         <div className="max-w-[120rem] mx-auto">
-          <motion.div 
+          <motion.div
             initial={{ x: "10%" }}
             whileInView={{ x: "-10%" }}
             transition={{ duration: 10, ease: "linear", repeat: Infinity, repeatType: "reverse" }}
